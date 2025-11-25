@@ -9,6 +9,6 @@ createRoot(document.getElementById('root')).render(
   <Provider store={reduxStore}>
     <StrictMode>
       <App />
-    </StrictMode>,
-  </Provider>,
+    </StrictMode>
+  </Provider>
 )

@@ -7,19 +7,28 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-route
 import { Toaster } from 'react-hot-toast'
 import Login from './pages/auth/Login'
 import Register from './pages/auth/Register'
-import UserHome from './pages/UserHome'
+import UserHome from './pages/user/UserHome'
+import BrowsePage from './pages/user/BrowsePage'
+import HiddenRoute from './shared/HiddenRoute'
+import ProtectedRoute from './shared/ProtectedRoute'
+import CreateMovie from './pages/admin/CreateMovie'
 
 function Main() {
  
   return (
     <>
       <Routes>
-        
-          <Route path="/" element={<Login />}></Route>
-          <Route path="/register" element={<Register />}></Route>
-          
+        <Route element={<HiddenRoute isAvailable />}>
+          <Route path="/" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+        </Route>
+
+        <Route element={<HiddenRoute />}>
           <Route path="/userhome" element={<UserHome />} />
-       
+          <Route path="/browse" element={<BrowsePage />} />
+
+          <Route path="/test-image" element={<ProtectedRoute><CreateMovie /></ProtectedRoute>} />
+        </Route>
       </Routes>
     </>
   );
