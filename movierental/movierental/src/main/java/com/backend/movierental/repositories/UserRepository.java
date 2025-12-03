@@ -36,17 +36,6 @@ public class UserRepository {
         return jdbc.queryForObject(sql, String.class, id);
     }
 
-//    public boolean validateUser(String email, String password) {
-//        String sql = """
-//            SELECT COUNT(*)
-//            FROM Users
-//            WHERE email = ? AND password = ?
-//        """;
-//
-//        Integer count = jdbc.queryForObject(sql, Integer.class, email, password);
-//        return count != null && count == 1;
-//    }
-
     public LoginResponse getUserDetails(String email, String password) {
         String sql = """
         SELECT customerID, firstName, lastName, email, isAdmin

@@ -17,7 +17,7 @@ export default function NavBar() {
 
   const handleLogout = () => {
     dispatch(logOutUser(navigate));
-    toast.success("Logged out");
+    //toast.success("Logged out");
   };
 
   return (
