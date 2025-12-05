@@ -11,6 +11,8 @@ lombok
 
 # Instructions 
 
+Make sure you 'git clone' this project in your desired directory
+
 ## Database 
 
 * Install mysql and mysql workbench (make sure username is root)
